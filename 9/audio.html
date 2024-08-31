@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf--8" />
+        <title>Туры в горы</title>
+        <script src="tury-v-gory.js"></script>
+        <link href="tury-v-gory.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <h1>Туры в горы</h1>
+            <div class="phone">+7 495 000-00-00</div>
+        </header>
+        <main>
+            <button id="startRecording">Записать</button>
+            <button id="stopRecording">Остановить</button>
+        </main>
+        <script>
+            // Получение доступа к микрофону
+navigator.mediaDevices.getUserMedia({ audio: true })
+  .then(function(stream) {
+    // Создание объекта MediaRecorder для записи аудио
+    const mediaRecorder = new MediaRecorder(stream);
+    const chunks = [];
+
+    // Обработчик события onDataAvailable - сохраняет данные в массив chunks
+    mediaRecorder.ondataavailable = function(e) {
+      chunks.push(e.data);
+    };
+
+    // Обработка нажатия кнопки "Записать"
+    document.getElementById('startRecording').addEventListener('click', function() {
+      mediaRecorder.start();
+    });
+
+    // Обработка нажатия кнопки "Остановить"
+    document.getElementById('stopRecording').addEventListener('click', function() {
+      mediaRecorder.stop();
+    });
+
+    // Обработчик события onStop - скачивает файл с записью
+    mediaRecorder.onstop = function() {
+      const audioBlob = new Blob(chunks, { type: 'audio/webm' });
+      const audioURL = URL.createObjectURL(audioBlob);
+      
+      // Создание ссылки на скачивание файла
+      const downloadLink = document.createElement('a');
+      downloadLink.href = audioURL;
+      downloadLink.download = 'audio_recording.webm';
+      downloadLink.innerHTML = 'Скачать запись';
+      document.body.appendChild(downloadLink);
+    };
+  })
+  .catch(function(err) {
+    console.log('Ошибка при получении доступа к микрофону: ' + err);
+  });
+        </script>
+    </body>
+</html>

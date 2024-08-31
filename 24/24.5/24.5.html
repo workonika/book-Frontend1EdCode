@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Современная фронтенд-разработка</title>
+        <style>
+            .two-slices {
+                display: flex;
+            }
+            .notes-container {
+                display: flex;
+            }
+            .events-list {
+                width: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Книга "Современная фронтенд-разработка", изд-во Питер https://piter.com; https://designfrontend.com -->
+        <div class="two-slices">
+            <div class="notes-container">
+                <div id="notes-list" class="notes-list"></div>
+                <div class="notes-add">
+                    <textarea id="note-form"></textarea>
+                    <div>
+                        <button id="note-button">Добавить заметку</button>
+                    </div>
+                </div>
+            </div>
+            <div class="events-container">
+                <div id="events-list" class="events-list"></div>
+            </div>
+        </div>
+        <script src="./dist/bundle.js"></script>
+    </body>
+</html>

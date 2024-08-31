@@ -1,0 +1,1 @@
+setTimeout(() => alert("Event Loop"), 1000);

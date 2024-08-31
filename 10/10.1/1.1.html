@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf--8" />
+        <title>Туры в горы</title>
+        <script src="tury-v-gory.js"></script>
+        <link href="tury-v-gory.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <h1>Туры в горы</h1>
+            <div class="phone">+7 495 000-00-00</div>
+        </header>
+        <main>
+            <h2>Ближайшие туры</h2>
+            <ul id="tours">
+                <li id="1">Индивидуальный тур</li>
+                <li id="2">Тур на семью из 4-х человек</li>
+                <li id="3">Групповой тур</li>
+                <li id="4">Тур для двоих</li>
+            </ul>
+        </main>
+        <script>
+            const getData = (id, cb) => {
+                const xhr = new XMLHttpRequest();
+                //  Ключевым моментом в том, что запрос производится синхронно, является третий
+                //  параметр метода open. Если его опустить, то запрос, по-умолчанию будет асинхронным
+                xhr.open('GET', `http://localhost:3000/api/data/${id}`, false);
+                xhr.addEventListener('load', (data) => {
+                    if (xhr.status === 200) {
+                        console.log(xhr.responseText);
+                    } else {
+                        console.error('Ошибка:', xhr.status);
+                    }
+                    console.log('data', data);
+                });
+                xhr.send();
+            };
+
+            const ul = document.getElementById('tours');
+            ul.addEventListener('click', (e) => {
+                console.log(e.target);
+                getData(e.target.id);
+            }, false);
+
+            
+        </script>
+    </body>
+</html>

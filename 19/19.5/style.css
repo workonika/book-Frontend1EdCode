@@ -1,0 +1,53 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.congratulation {
+    padding: 20px;
+}
+
+.shopping_cart {
+    position: fixed;
+    right: 200px;
+    top: 20px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.books {
+    width: 80%;
+    margin: 100px auto;
+    padding: 30px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+
+.book {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+    margin-right: 20px;
+    max-width: 270px;
+}
+
+.button {
+    margin: 20px;
+}
+
+.notifications {
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+}
+
+.notification {
+    margin: 20px;
+    padding: 20px;
+}
+
+.description {
+    margin-bottom: 10px;
+}

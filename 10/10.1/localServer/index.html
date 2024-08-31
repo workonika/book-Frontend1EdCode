@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Туры в горы</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <section id="modal" class="modal">
+            <div class="inner-modal">
+                <h3 id="title"></h3>
+                <p id="description"></p>
+                <p id="close" class="close">Закрыть</p>
+            </div>
+        </section>
+        <header>
+            <h1>Туры в горы</h1>
+            <div class="phone">+7 495 000-00-00</div>
+        </header>
+        <main>
+            <h2>Ближайшие туры</h2>
+            <ul id="tours">
+                <li id="1">Индивидуальный тур</li>
+                <li id="2">Тур на семью из 4-х человек</li>
+                <li id="3">Групповой тур</li>
+                <li id="4">Тур для двоих</li>
+            </ul>
+            <div>
+                <h3>Поставь лайк этому разделу</h3>
+                <section>
+                    <div class="button-container">
+                        <button id="like">Лайк</button>
+                    </div>
+                    <div class="button-container">
+                        <button id="dislike">ДизЛайк</button>
+                    </div>
+                    <div id="counterLike" class="counter"></div>
+                    <div id="counterDislike" class="counter"></div>
+                </section>
+            </div>
+        </main>
+        <script>
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('title');
+            const description = document.getElementById('description');
+            
+            const openModal = (titleText, descriptionText) => {
+                modal.style.display = 'block';
+                title.textContent = titleText;
+                description.textContent = descriptionText;
+            };
+
+            const closeModal = () => {
+                modal.style.display = 'none';
+                title.textContent = '';
+                description.textContent = '';
+            }
+
+            const closeModalButton = document.getElementById('close');
+            closeModalButton.addEventListener('click', closeModal, false);
+
+            const showTourDescription = (tourData) => {
+                const { title, description } = JSON.parse(tourData);
+                openModal(title, description);
+            }
+            const getData = (id, cb) => {
+                const xhr = new XMLHttpRequest();
+                //  Ключевым моментом в том, что запрос производится синхронно, является третий
+                //  параметр метода open. Если его опустить, то запрос, по-умолчанию будет асинхронным
+                xhr.open('GET', `http://localhost:3000/api/data/${id}`, false);
+                xhr.addEventListener('load', (data) => {
+                    if (xhr.status === 200) {
+                        cb && cb(xhr.responseText);
+                    } else {
+                        console.error('Ошибка:', xhr.status);
+                    }
+                });
+                xhr.send();
+            };
+
+            const ul = document.getElementById('tours');
+            ul.addEventListener('click', (e) => {
+                getData(e.target.id, showTourDescription);
+            }, false);
+
+            // Дополнительная функциональность, c которой может взаимодействовать пользователь
+            // но как только делается запрос, интерфейс застывает, до момента окончания выполнения синхронного действия
+
+            let counterLike = 24;
+            let counterDislike = 4;
+
+            const likeButton = document.getElementById('like');
+            const dislikeButton = document.getElementById('dislike');
+            const counterLikeDiv = document.getElementById('counterLike');
+            const counterDislikeDiv = document.getElementById('counterDislike');
+
+            let isCurrentUserLiked = false;
+            let isCurrentUserDisliked = false;
+
+            counterLikeDiv.textContent = counterLike;
+            counterDislikeDiv.textContent = counterDislike;
+
+            dislikeButton.onclick = () => {
+                if (isCurrentUserDisliked) {
+                    return false;
+                }
+                if (isCurrentUserLiked && counterLike !==0) {
+                    counterLike--;
+                    isCurrentUserLiked = false;
+                    counterLikeDiv.textContent = counterLike;
+                }
+                counterDislike++;
+                isCurrentUserDisliked = true;
+                counterDislikeDiv.textContent = counterDislike;
+            }
+
+            likeButton.onclick = () => {
+                if (isCurrentUserLiked) {
+                    return false;
+                }
+                if (isCurrentUserDisliked && counterDislike !==0) {
+                    counterDislike--;
+                    isCurrentUserDisliked = false;
+                    counterDislikeDiv.textContent = counterDislike;
+                }
+                counterLike++;
+                isCurrentUserLiked = true;
+                counterLikeDiv.textContent = counterLike;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+header {
+    background-image: url('./img/background.png');
+    height: 400px;
+    background-repeat: repeat-x;
+    border-bottom: 1px solid black;
+    background-position-y: 235px;
+    background-position-x: center;
+}
+
+h1 {
+    font-family: sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: rgb(153, 153, 153);
+    font-size: 83px;
+    text-align: center;
+}
+
+h2 {
+    font-family: sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #333333;
+    font-size: 24px;
+    text-align: left;
+}
+
+.phone {
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-left: 20%;
+}
+
+main {
+    width: 90%;
+    margin: 5% auto;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    font-family: sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #333333;
+    font-size: 24px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    min-width: 40%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    height: 50px;
+    cursor: pointer;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-gap: 10px;
+}
+
+label {
+    display: grid; 
+    grid-template-columns: 1fr 2fr; 
+    align-items: center;
+}
+
+input {
+    width: 100%; 
+    margin-left: 10px;
+}
+
+h3 {
+    font-family: sans-serif;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+button {
+    width: 100%;
+}
+  
+.button-container {
+    width: 100px;
+}
+
+.counter {
+    width: 100px;
+    text-align: center;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.inner-modal {
+    width: 600px;
+    height: 600px;
+    padding: 20px;
+    border: 5px solid brown;
+}
+
+.close {
+    cursor: pointer;
+}

@@ -1,0 +1,80 @@
+<svg
+   width="33mm"
+   height="10mm"
+   viewBox="0 0 33 10"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="Triangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       isstock="true"
+       collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt; stroke: #ffffff;fill: #ffffff"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+  </defs>
+  <g
+     label="Слой 1"
+     groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ac9393;fill-opacity:1;stroke:#ffffff;stroke-width:0.229;stroke-linecap:square;stroke-miterlimit:5.1;stroke-opacity:1"
+       id="rect32"
+       width="32.625587"
+       height="9.7424583"
+       x="0.056409169"
+       y="0.044490177"
+       ry="2.4238334" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;line-height:0.95;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.264583"
+       x="10.240521"
+       y="5.9056907"
+       id="text58"><tspan
+         role="line"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;line-height:0.95;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#ffffff;stroke-width:0.264583"
+         x="10.240521"
+         y="5.9056907"
+         id="tspan58">Кнопка img</tspan></text>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:0.561;stroke-linecap:square;stroke-miterlimit:5.1;stroke-dasharray:none;stroke-opacity:1"
+       id="path1"
+       type="arc"
+       cx="5.086267"
+       cy="4.846601"
+       rx="2.315011"
+       ry="2.3292136"
+       start="1.3243747"
+       end="0.33655419"
+       open="true"
+       arc-type="arc"
+       d="M 5.6509798,7.1054526 A 2.315011,2.3292136 0 0 1 3.0473473,5.9497227 2.315011,2.3292136 0 0 1 3.5247158,3.1270713 2.315011,2.3292136 0 0 1 6.3617361,2.9027923 2.315011,2.3292136 0 0 1 7.2714017,5.6157925" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:0.261;stroke-linecap:square;stroke-miterlimit:5.1;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle)"
+       id="path2"
+       type="arc"
+       cx="5.086267"
+       cy="4.799829"
+       rx="2.315011"
+       ry="2.3292136"
+       start="0.28917035"
+       end="0.33655419"
+       open="true"
+       arc-type="arc"
+       d="M 7.3051606,5.4640209 A 2.315011,2.3292136 0 0 1 7.2714017,5.5690205" />
+  </g>
+</svg>

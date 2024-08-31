@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Современная фронтенд-разработка</title>
+        <style>
+            .counter-container {
+                display: flex;
+            }
+            .products-container {
+                display: flex;
+                flex-direction: column;
+                padding-top: 10px;
+            }
+            .products-button {
+                max-width: 150px;
+            }
+            .counter {
+                max-width: 30px;
+                text-align: center;
+            }
+            .product-card-container {
+                margin-bottom: 40px;
+            }
+            .product-card-container h3 {
+                background-color: aliceblue;
+            }
+            .card-attribute-container {
+                margin-bottom: 8px;
+            }
+            .card-attribute-name {
+                font-weight: 600;
+            }
+            .card-attribute-value {
+                margin-left: 10px; 
+                margin-right: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Книга "Современная фронтенд-разработка", изд-во Питер https://piter.com; https://designfrontend.com -->
+        <div class="counter-container">
+            <button id="increment-button">+</button>
+            <input id="counter" class="counter"/>
+            <button id="decrement-button">-</button>
+        </div>
+        <div class="products-container">
+            <button id="products-button" class="products-button">Получить товары</button>
+            <output id="products-result"></output>
+        </div>
+        <script src="./dist/bundle.js"></script>
+    </body>
+</html>

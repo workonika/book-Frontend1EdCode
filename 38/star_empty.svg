@@ -1,0 +1,31 @@
+<svg
+   width="8mm"
+   height="8mm"
+   viewBox="0 0 8 8"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg">
+  <g
+     label="Слой 1"
+     groupmode="layer"
+     id="layer1">
+    <path
+       type="star"
+       style="fill:none;stroke:#000000;stroke-width:1.3754;stroke-linecap:square;stroke-miterlimit:5.1;stroke-dasharray:none"
+       id="path1"
+       flatsided="false"
+       sides="5"
+       cx="51.636471"
+       cy="170.0636"
+       r1="21.515196"
+       r2="10.7576"
+       arg1="0"
+       arg2="0.62831853"
+       rounded="0"
+       randomized="0"
+       d="m 73.151667,170.0636 -12.812115,6.32316 -2.05452,14.13901 -9.972842,-10.23109 -14.081878,2.41523 6.648559,-12.64631 -6.648559,-12.64632 14.081878,2.41523 9.972842,-10.23108 2.05452,14.13901 z"
+       transform-center-x="0.011159747"
+       transform-center-y="-0.36319801"
+       transform="matrix(0.17251987,-0.05781986,0.05781986,0.17251987,-14.726112,-22.104623)" />
+  </g>
+</svg>

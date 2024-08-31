@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf--8" />
+        <title>Туры в горы</title>
+        <script src="tury-v-gory.js"></script>
+        <link href="tury-v-gory.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <h1>Туры в горы</h1>
+            <div class="phone">+7 495 000-00-00</div>
+        </header>
+        <main>
+            <h2>Форма заказа тура</h2>
+            <form>
+                <label>
+                  <span>ФИО:</span>
+                  <input type="text" name="name">
+                </label>
+                <label>
+                  <span>Телефон:</span>
+                  <input type="tel" name="phone">
+                </label>
+                <label>
+                  <span>E-mail:</span>
+                  <input type="email" name="email">
+                </label>
+                <button type="submit">Отправить</button>
+            </form>
+        </main>
+        <script>
+            window.addEventListener("resize", function() {
+                console.log('Текущие размеры viewport\n');
+                console.log(
+                    'ширина: ', window.innerWidth, 
+                    'высота: ', window.innerHeight
+                );
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf--8" />
+        <title>Туры в горы</title>
+        <script src="tury-v-gory.js"></script>
+        <link href="tury-v-gory.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <h1>Туры в горы</h1>
+            <div class="phone">+7 495 000-00-00</div>
+        </header>
+        <main>
+            <h2>Ближайшие туры</h2>
+            <ul>
+                <li>Горящие</li>
+                <li>По 8000 руб.</li>
+                <li>По 16000 руб.</li>
+                <li>По 32000 руб.</li>
+                <li>По 64000 руб.</li>
+            </ul>
+        </main>
+        <script>
+            const ul = document.querySelector('ul');
+            const li = ul.firstElementChild;
+
+            const clickHandler = (eventObject) => {
+                console.log(eventObject);
+                alert(eventObject.target.textContent);
+            };
+
+            li.addEventListener('click', clickHandler, true);
+        </script>
+    </body>
+</html>

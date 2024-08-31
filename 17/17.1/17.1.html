@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Современная фронтенд-разработка</title>
+        <style>
+            input, button {
+                height: 50px;
+                font-size: 18px;
+            }
+            input { width: 400px; }
+            fieldset { margin-top: 20px; margin-bottom: 20px; }
+            output { font-size: 20px; }
+        </style>
+    </head>
+    <body>
+        <!-- Книга "Современная фронтенд-разработка", изд-ва Питер https://piter.com; https://designfrontend.com -->
+        <form>
+            <input id="input" name="input" value="" />
+            <button id="button">Сохранить</button>
+            <fieldset>
+                <legend>Сохраненные значения</legend>
+                <output id="output"></output>
+            </fieldset>
+            <button id="unsubsBtn">Прекратить подписку</button>
+            <button id="subsBtn">Возобновить подписку</button>
+        </form>
+        <script src="./dist/main.js"></script>
+    </body>
+</html>

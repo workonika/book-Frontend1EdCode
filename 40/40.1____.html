@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        <form method="post"
+            enctype="application/x-www-form-urlencoded"
+            action="https://pizza.example.com/order.cgi">
+        <p><label for="custname">Customer name: </label>
+            <input id="custname" name="custname" required autocomplete="shipping name"></p>
+        <p><label for="custtel">Telephone: </label>
+            <input type=tel id="custtel" name="custtel" autocomplete="shipping tel"></p>
+        <fieldset>
+            <legend> Pizza Size </legend>
+            <p><label> <input type=radio name=size required value="small"> Small </label></p>
+            <p><label> <input type=radio name=size required value="medium"> Medium </label></p>
+        </fieldset>
+        <fieldset>
+            <legend> Pizza Toppings </legend>
+            <p><label> <input type=checkbox name="topping" value="bacon"> Bacon </label></p>
+            <p><label> <input type=checkbox name="topping" value="cheese"> Extra Cheese </label></p>
+        </fieldset>
+        <p><label>Delivery instructions: <textarea name="comments" maxlength=1000></textarea></label></p>
+        <fieldset>
+            <legend>File</legend>
+            <input type="file" />
+        </fieldset>
+        <fieldset>
+            <legend>Datalist</legend>
+            <label>
+                Animal:
+                <input name=animal list=animals>
+                <datalist id=animals>
+                 <option value="Cat" title="Кошка">
+                 <option value="Dog" title="Собака">
+                 <option value="Dogerman" title="Догерман">
+                 <option value="Doggy" title="Догги">
+                </datalist>
+               </label>
+        </fieldset>
+        <p>
+            <input type="submit" title="Отправить" />
+            <input type="reset" title="Сбросить" />
+        </p>
+        </form>
+        <label for="price">Choose a maximum house price: </label>
+        <input
+            type="range"
+            name="price"
+            id="price"
+            min="50000"
+            max="500000"
+            step="100"
+            value="250000" />
+        <output class="price-output" for="price"></output>
+        <script>
+            const price = document.querySelector("#price");
+            const output = document.querySelector(".price-output");
+
+            output.textContent = price.value;
+
+            price.addEventListener("input", () => {
+            output.textContent = price.value;
+            });
+        </script>
+    </body>
+</html>

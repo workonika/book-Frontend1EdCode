@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf--8" />
+        <title>NodeList</title>
+    </head>
+    <body>
+        <ul id="node-list-live">
+            <li>First</li>
+            <li>Second</li>
+        </ul>
+        <ul>
+            <li class="node-list-static">First</li>
+            <li class="node-list-static">Second</li>
+        </ul>
+        <script>
+            const createLiWithTextNode = () => {
+                const li = document.createElement('li');
+                li.appendChild(document.createTextNode('Third'));
+
+                return li;
+            }
+            //  Проверим работу live NodeList
+            const liveNodeListParent = document.getElementById('node-list-live');
+            const liveNodeList = liveNodeListParent.childNodes;
+            console.log(liveNodeList.length);
+            const liveNodeListLi = createLiWithTextNode();
+            liveNodeListParent.appendChild(liveNodeListLi);
+            console.log(liveNodeList.length);
+        </script>
+        <script>
+            const nodeListStatic = document.querySelectorAll('.node-list-static');
+            const parent = nodeListStatic[0].parentNode;
+            console.log(nodeListStatic.length);
+            const staticNodeListLi = createLiWithTextNode();
+            parent.appendChild(staticNodeListLi);
+            console.log(nodeListStatic.length);
+            console.log(parent.childNodes);
+        </script>
+    </body>
+</html>

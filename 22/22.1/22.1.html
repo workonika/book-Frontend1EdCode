@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Современная фронтенд-разработка</title>
+        <style>
+            #content {
+                position: relative;
+                width: 50%;
+                height: 500px;
+            }
+            #output {
+                position: relative;
+                width: 100%;
+                height: 500px;
+                border: 1px solid grey;
+                overflow-y: scroll;
+            }
+            #loading {
+                position: absolute;
+                z-index: 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(255, 255, 255, 0.7);
+                color: grey;
+                font-weight: 600;
+                font-size: 24px;
+                width: 100%;
+                height: 100%;
+            }
+            .error {
+                border: 1px solid firebrick;
+                margin: 20px;
+                padding: 20px;
+            }
+            .container {
+                margin: 20px;
+            }
+            .title {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size:18px;
+                margin-bottom: 15px;
+                border-bottom: 1px solid grey;
+            }
+            .body {
+                font-size: 16px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                border-bottom: 1px solid silver;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Книга "Современная фронтенд-разработка", изд-во Питер https://piter.com; https://designfrontend.com -->
+        <div id="content">
+            <div id="loading">Загрузка...</div>
+            <div id="output"></div>
+        </div>
+        <div>Загружен: <span id="loaded-count"></span></div>
+        <button>Загрузить</button>
+        <script src="./dist/bundle.js"></script>
+    </body>
+</html>
